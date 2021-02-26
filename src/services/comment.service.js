@@ -11,7 +11,7 @@ class CommentService extends BaseService {
     }
 
 
-    async getIdeaComment(ideaId) {
+    async getIdeaComments(ideaId) {
         if (!ideaId) {
             const error = new Error;
             error.code = 400;
