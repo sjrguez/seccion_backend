@@ -11,7 +11,7 @@ class IdeaService extends BaseService {
     async getIdeaByUserId(author) {
         if (!author) {
             const error = new Error;
-            error.code = 400;
+            error.status = 400;
             error.message = "userid must be sent";
         }
 
@@ -22,7 +22,7 @@ class IdeaService extends BaseService {
     async upvoteIdea(ideaId) {
         if (!ideaId) {
             const error = new Error;
-            error.code = 400;
+            error.status = 400;
             error.message = "ideaId must be sent";
         }
 
@@ -30,7 +30,7 @@ class IdeaService extends BaseService {
 
         if (!idea) {
             const error = new Error;
-            error.code = 404;
+            error.status = 404;
             error.message = "idea does not exist";
         }
 
@@ -42,7 +42,7 @@ class IdeaService extends BaseService {
     async downvoteIdea(ideaId) {
         if (!ideaId) {
             const error = new Error;
-            error.code = 400;
+            error.status = 400;
             error.message = "ideaId must be sent";
         }
 
@@ -50,7 +50,7 @@ class IdeaService extends BaseService {
 
         if (!idea) {
             const error = new Error;
-            error.code = 404;
+            error.status = 404;
             error.message = "idea does not exist";
         }
 

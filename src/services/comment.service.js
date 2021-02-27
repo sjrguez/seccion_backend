@@ -14,7 +14,7 @@ class CommentService extends BaseService {
     async getIdeaComments(ideaId) {
         if (!ideaId) {
             const error = new Error;
-            error.code = 400;
+            error.status = 400;
             error.message = "ideaId must be sent";
         }
 
@@ -22,7 +22,7 @@ class CommentService extends BaseService {
 
         if (!idea) {
             const error = new Error;
-            error.code = 404;
+            error.status = 404;
             error.message = "idea does not exist";
         }
 
@@ -36,7 +36,7 @@ class CommentService extends BaseService {
 
         if (!ideaId) {
             const error = new Error;
-            error.code = 400;
+            error.status = 400;
             error.message = "ideaId must be sent";
         }
 
@@ -44,7 +44,7 @@ class CommentService extends BaseService {
 
         if (!idea) {
             const error = new Error;
-            error.code = 404;
+            error.status = 404;
             error.message = "idea does not exist";
         }
 
