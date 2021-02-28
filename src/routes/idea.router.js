@@ -1,10 +1,11 @@
 const { Router } = require('express');
+const { ParserInMiddleware } = require('../midlewares');
 
 module.exports = function({ IdeaController }) {
 
     const router = Router();
 
-    router.get("/", IdeaController.getAll)
+    router.get("/", ParserInMiddleware, IdeaController.getAll)
     router.get("/:ideaId", IdeaController.get)
     router.post("/", IdeaController.create)
     router.get("/:ideaId/all", IdeaController.getUserIdeas)

@@ -1,10 +1,10 @@
 const { Router } = require('express');
-
+const { AuthMiddleware, ParserInMiddleware } = require("../midlewares/index")
 module.exports = function({ UserController }) {
 
     const router = Router();
 
-    router.get("/", UserController.getAll)
+    router.get("/", [AuthMiddleware, ParserInMiddleware], UserController.getAll)
     router.get("/:userId", UserController.get)
 
 
